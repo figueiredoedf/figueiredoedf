@@ -20,3 +20,11 @@ Cuido de growth e tráfego pago na **[BrainJuice](https://brainjuice.com.br)**. 
 ![Meta Ads](https://img.shields.io/badge/Meta_Ads-0467DF?style=flat&logo=meta&logoColor=white)
 ![Google Ads](https://img.shields.io/badge/Google_Ads-4285F4?style=flat&logo=googleads&logoColor=white)
 ![Klaviyo](https://img.shields.io/badge/Klaviyo-232426?style=flat&logo=klaviyo&logoColor=white)
+
+<br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/figueiredoedf/figueiredoedf/output/cobrinha-escura.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/figueiredoedf/figueiredoedf/output/cobrinha.svg">
+  <img alt="Cobrinha comendo os quadradinhos de contribuição" src="https://raw.githubusercontent.com/figueiredoedf/figueiredoedf/output/cobrinha.svg">
+</picture>

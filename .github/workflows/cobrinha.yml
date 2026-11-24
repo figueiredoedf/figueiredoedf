@@ -1,0 +1,36 @@
+# Gera a cobrinha que come os quadradinhos de contribuição, nas cores da BrainJuice,
+# e publica os SVGs na branch "output" (o README do perfil aponta para lá).
+name: Cobrinha
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # todo dia às 6h de Brasília
+  workflow_dispatch: # botão "Run workflow" para gerar na hora
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Gerar as animações
+        uses: Platane/snk@v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # color_dots: 1º = dia sem contribuição, depois do menos ao mais ativo (5 cores).
+          outputs: |
+            dist/cobrinha.svg?color_snake=#eaa000&color_dots=#ebedf0,#c5dccd,#7fae93,#2d5a45,#16301f
+            dist/cobrinha-escura.svg?color_snake=#ffc83d&color_dots=#161b22,#16301f,#2d5a45,#4f8a6b,#8fc7a5
+
+      - name: Publicar na branch output
+        uses: crazy-max/ghaction-github-pages@v5.0.0
+        with:
+          target_branch: output
+          build_dir: dist
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
